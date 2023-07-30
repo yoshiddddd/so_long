@@ -1,5 +1,5 @@
-// #include "./mlx/mlx.h"
-#include <mlx.h>
+#include "./mlx/mlx.h"
+// #include <mlx.h>   
 int	main(void)
 {
 	void	*mlx;
