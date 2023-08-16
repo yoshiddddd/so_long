@@ -15,7 +15,10 @@ SRCS = so_long.c \
 		render_map.c\
 		get_next_line/get_next_line.c \
 		get_next_line/get_next_line_utils.c \
-		what_key.c
+		what_key.c\
+		read_map.c\
+		link_line.c\
+		free_file.c\
 
 OBJS = $(SRCS:.c=.o)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:25:55 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/08 22:18:51 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/16 16:48:21 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
