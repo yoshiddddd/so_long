@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:26:59 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/16 19:01:55 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/20 14:58:48 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 # define GOAL 'E'
 # define WALL '1'
 
-# define DELETE_EVE 33
+# define DELETE_EVE 17
 # define DELETE_MASK 1L << 17
 
 # define PLAYER_PATH "./textures/player.xpm"
@@ -70,7 +70,8 @@ typedef struct s_element
 	int			y;
 	int			p_position_x;
 	int			p_position_y;
-
+	int 		g_position_x;
+	int 		g_position_y;
 }				t_element;
 
 typedef struct s_map
@@ -79,6 +80,8 @@ typedef struct s_map
 	int			rows;
 	int			colums;
 	int			invalid_element;
+	int			movement;
+	bool 		**reach;
 	t_element	player;
 	t_element	wall;
 	t_element	item;
@@ -95,7 +98,7 @@ typedef struct s_game
 }				t_game;
 
 void			check_file_extention(int argc, char *argv[], t_game *game);
-void			isvalid_map_check(t_game *game, char *argv[]);
+void			read_and_isvalid_map_check(t_game *game, char *argv[]);
 void			get_img(t_game *game);
 void			render_map(t_game *game);
 int				what_key(int keycode, t_game *game);
@@ -105,4 +108,5 @@ void			free_double(t_game *game);
 char			*link_line(char *s1, char *s2);
 void	map_error_check(t_game *game);
 void	map_isvalid_elements(t_game *game);
+void search_goal(t_game *game);
 #endif

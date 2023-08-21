@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:52:06 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/16 18:52:27 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/18 17:56:18 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

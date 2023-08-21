@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_img.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:19:09 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/16 18:56:15 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/20 14:09:16 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,95 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   isvalid_map_check.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/07 14:29:25 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/16 18:54:15 by kyoshida         ###   ########.fr       */
+/*   Created: 2023/08/16 18:50:59 by kyoshida          #+#    #+#             */
+/*   Updated: 2023/08/19 18:13:33 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-
-void	map_is_wall_check(t_game *game)
+static char	*read_file(t_game *game, int fd)
 {
-	char	**map;
-	int		i;
+	char	*map_line;
+	char	*tmp_line;
 
-	i = 0;
-	map = game->map.all;
-	while (map[game->map.rows - 1][i])
+	tmp_line = NULL;
+	while (LINE_NULL)
 	{
-		if (map[0][i] != WALL || map[game->map.rows - 1][i] != WALL)
-			free_and_exit_msg(game, "wall");
-		i++;
+		map_line = get_next_line(fd);
+		if (map_line == NULL || map_line[0] == '\n')
+			break ;
+		tmp_line = link_line(tmp_line, map_line);
+		if (tmp_line == NULL)
+		{
+			// free(map_line);
+			ft_printf("\x1b[31mERROR\nMALLOC_FAILD\n\x1b[0m");
+			exit(EXIT_FAILURE);
+		}
+		free(map_line);
+		game->map.rows++;
 	}
-	i = 0;
-	while (map[i])
-	{
-		if (map[i][0] != WALL || map[i][game->map.colums - 1] != WALL)
-			free_and_exit_msg(game, "wall");
-		i++;
-	}
+	free(map_line);
+	close(fd);
+	return (tmp_line);
 }
 
-void	map_error_check(t_game *game)
+void	read_and_isvalid_map_check(t_game *game, char *argv[])
 {
-	size_t	i;
+	char	*tmp_line;
+	int		fd;
 
-	game->map.colums = ft_strlen(game->map.all[0]);
-	i = 0;
-	while (game->map.all[i] != NULL)
+	fd = open(argv[CORRECT_ARGC_NUM - 1], O_RDONLY);
+	if (fd == INVALID_FD)
 	{
-		if (game->map.colums != (int)ft_strlen(game->map.all[i]))
-			free_and_exit_msg(game, "width");
-		i++;
+		ft_printf("\x1b[31mERROR\nMAP NOT FOUND\n\x1b[0m");
+		exit(EXIT_FAILURE);
 	}
-	map_is_wall_check(game);
-}
-
-
-void	search_element_num(char *map, t_game *game)
-{
-	int	i;
-
-	i = 0;
-	while (map[i])
+	tmp_line = read_file(game, fd);
+	game->map.all = ft_split(tmp_line, '\n');
+	if (game->map.all == NULL)
 	{
-		if (map[i] == PLAYER)
-			game->map.player.num++;
-		else if (map[i] == ITEM)
-			game->map.item.num++;
-		else if (map[i] == GOAL)
-			game->map.goal.num++;
-		else if (map[i] == FLOOR)
-			game->map.floor.num++;
-		else if (!(map[i] == WALL))
-			game->map.invalid_element++;
-		i++;
+		ft_printf("\x1b[31mERROR\nMAP INVALID\n\x1b[0m");
+		exit(EXIT_FAILURE);
 	}
-}
-
-void	check_elements(t_game *game)
-{
-	int		i;
-	char	**map;
-
-	i = 0;
-	map = game->map.all;
-	while (map[i])
-	{
-		search_element_num(map[i], game);
-		i++;
-	}
-	if (game->map.invalid_element > 0)
-		free_and_exit_msg(game, "elenotcontain");
-}
-
-void	map_isvalid_elements(t_game *game)
-{
-	check_elements(game);
-	if (game->map.player.num != 1 || game->map.item.num < 1
-		|| game->map.goal.num != 1 || game->map.floor.num < 1)
-		free_and_exit_msg(game, "invalidele");
+	free(tmp_line);
+	map_error_check(game);
+	map_isvalid_elements(game);
+	search_goal(game);
 }
