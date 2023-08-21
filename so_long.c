@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:15:18 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/21 19:55:59 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/21 21:25:46 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char *argv[])
 	mlx_loop(game->mlx);
 	return (TRUE);
 }
-// __attribute__((destructor)) // leakがないかチェック
+// __attribute__((destructor))
 // static void
 // destructor()
 // {

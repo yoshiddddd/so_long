@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:26:59 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/21 19:55:46 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/21 23:28:04 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@
 # define FLOOR '0'
 # define GOAL 'E'
 # define WALL '1'
-# define PLAYER_PATH "./textures/player.xpm"
-# define ITEM_PATH "./textures/coins.xpm"
-# define WALL_PATH "./textures/wall.xpm"
-# define GOAL_PATH "./textures/exit.xpm"
+# define PLAYER_PATH "./textures/ningen.xpm"
+# define ITEM_PATH "./textures/key.xpm"
+# define WALL_PATH "./textures/kusa.xpm"
+# define GOAL_PATH "./textures/takara.xpm"
 # define FLOOR_PATH "./textures/empty.xpm"
 # define UP 13
 # define DOWN 1
