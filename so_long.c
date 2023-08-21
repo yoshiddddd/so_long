@@ -6,7 +6,7 @@
 /*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:15:18 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/21 19:26:07 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/21 19:55:59 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char *argv[])
 	get_img(game);
 	render_map(game);
 	mlx_key_hook(game->window, what_key, game);
-	mlx_hook(game->window, DELETE_EVE, DELETE_MASK, closes, game);
+	mlx_hook(game->window, DELETE_EVE, 1 << 17, closes, game);
 	mlx_loop(game->mlx);
 	return (TRUE);
 }

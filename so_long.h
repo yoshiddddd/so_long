@@ -6,7 +6,7 @@
 /*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:26:59 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/21 19:33:50 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/21 19:55:46 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,34 +25,26 @@
 
 # define FALSE 1
 # define TRUE 0
-
 # define CORRECT_ARGC_NUM 2
 # define EXTENSION ".ber"
 # define LINE_NULL 1
 # define INVALID_FD -1
-
 # define PLAYER 'P'
 # define ITEM 'C'
 # define FLOOR '0'
 # define GOAL 'E'
 # define WALL '1'
-
-# define DELETE_EVE 17
-# define DELETE_MASK 1L << 17
-
 # define PLAYER_PATH "./textures/player.xpm"
 # define ITEM_PATH "./textures/coins.xpm"
 # define WALL_PATH "./textures/wall.xpm"
 # define GOAL_PATH "./textures/exit.xpm"
 # define FLOOR_PATH "./textures/empty.xpm"
-# define DAMAGE_PATH "./textures/damage.xpm"
-
 # define UP 13
 # define DOWN 1
 # define RIGHT 2
 # define LEFT 0
-
 # define TILE_SIZE 32
+# define DELETE_EVE 17
 
 typedef struct s_position
 {
