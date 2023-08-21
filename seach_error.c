@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   seach_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 14:29:25 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/20 15:03:11 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/21 19:25:10 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
 
 void	map_is_wall_check(t_game *game)
 {
@@ -23,14 +22,14 @@ void	map_is_wall_check(t_game *game)
 	while (map[game->map.rows - 1][i])
 	{
 		if (map[0][i] != WALL || map[game->map.rows - 1][i] != WALL)
-			free_and_exit_msg(game, "wall");
+			exit_msg("wall");
 		i++;
 	}
 	i = 0;
 	while (map[i])
 	{
 		if (map[i][0] != WALL || map[i][game->map.colums - 1] != WALL)
-			free_and_exit_msg(game, "wall");
+			exit_msg("wall");
 		i++;
 	}
 }
@@ -44,12 +43,11 @@ void	map_error_check(t_game *game)
 	while (game->map.all[i] != NULL)
 	{
 		if (game->map.colums != (int)ft_strlen(game->map.all[i]))
-			free_and_exit_msg(game, "width");
+			exit_msg("width");
 		i++;
 	}
 	map_is_wall_check(game);
 }
-
 
 void	search_element_num(char *map, t_game *game)
 {
@@ -85,7 +83,7 @@ void	check_elements(t_game *game)
 		i++;
 	}
 	if (game->map.invalid_element > 0)
-		free_and_exit_msg(game, "elenotcontain");
+		exit_msg("elenotcontain");
 }
 
 void	map_isvalid_elements(t_game *game)
@@ -93,5 +91,5 @@ void	map_isvalid_elements(t_game *game)
 	check_elements(game);
 	if (game->map.player.num != 1 || game->map.item.num < 1
 		|| game->map.goal.num != 1)
-		free_and_exit_msg(game, "invalidele");
+		exit_msg("invalidele");
 }

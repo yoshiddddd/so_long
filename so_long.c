@@ -3,36 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:15:18 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/21 13:18:20 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/21 19:26:07 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	closes(int keycode, t_game *game)
-{
-	if (keycode || game)
-		;
-	printf("closed\n");
-	exit(EXIT_SUCCESS);
-	mlx_destroy_window(game->mlx, game->window);
-	return (0);
-}
-
 int	main(int argc, char *argv[])
 {
 	t_game	*game;
+
 	game = (t_game *)malloc(sizeof(t_game));
 	if (!game)
-	{
-		perror("ERROR\nmalloc_error\n");
-		return (FALSE);
-	}
+		exit_msg("mallocerror");
 	game->map.movement = 0;
-	check_file_extention(argc, argv, game);
+	check_file_extention(argc, argv);
 	read_and_isvalid_map_check(game, argv);
 	game->mlx = mlx_init();
 	game->window = mlx_new_window(game->mlx, game->map.colums * TILE_SIZE,
@@ -44,9 +32,9 @@ int	main(int argc, char *argv[])
 	mlx_loop(game->mlx);
 	return (TRUE);
 }
-__attribute__((destructor)) // leakがないかチェック
-static void
-destructor()
-{
-	system("leaks -q so_long");
-}
+// __attribute__((destructor)) // leakがないかチェック
+// static void
+// destructor()
+// {
+// 	system("leaks -q so_long");
+// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 16:35:34 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/08 15:29:57 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/21 19:24:07 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ char	*ft_gstrjoin(char const *s1, char const *s2)
 	int		i;
 
 	i = 0;
-	concat_s = (char *)malloc(sizeof(char) * ft_gstrlen(s1) + ft_gstrlen(s2) + 1);
+	concat_s = (char *)malloc(sizeof(char) * ft_gstrlen(s1) + ft_gstrlen(s2)
+			+ 1);
 	if (concat_s == NULL)
 		return (NULL);
 	if (s1 != NULL)

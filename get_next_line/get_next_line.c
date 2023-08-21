@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 16:35:38 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/08 14:50:56 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/21 19:23:45 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static char	*ft_output(char *save_string)
 		return (NULL);
 	while (save_string[i] != '\n' && save_string[i] != '\0')
 		i++;
-	ans = (char *)malloc(sizeof(char) * i + (save_string[i]=='\n') + 1);//trueは1が返ってくる
+	ans = (char *)malloc(sizeof(char) * i + (save_string[i] == '\n') + 1);
 	if (ans == NULL)
 		return (NULL);
 	i = 0;
@@ -83,7 +83,7 @@ static char	*ft_read(int fd, char *save_string)
 		}
 		buf[n_read] = '\0';
 		tmp = save_string;
-		save_string = ft_gstrjoin(tmp, buf);//ここがNULL返ってきた時は？
+		save_string = ft_gstrjoin(tmp, buf);
 		free(tmp);
 	}
 	free(buf);
@@ -95,7 +95,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*save_string;
 
-	if (fd < 0 || BUFFER_SIZE <= 0|| fd>256)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
 		return (NULL);
 	save_string = ft_read(fd, save_string);
 	if (!save_string)

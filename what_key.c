@@ -3,31 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   what_key.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:53:18 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/21 09:33:56 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/21 19:26:16 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	end_game(t_game *game)
-{
-	mlx_destroy_window(game->mlx, game->window);
-	ft_printf(		
-"\033[0;32m███████████████████████████████████████████████████████████████\n\
-██                                                           ██\n\
-██   ████    █        ██████      █      ██████     ██  ██   ██\n\
-██  █    █   █        █          █ █     █    ██    ██  ██   ██\n\
-██  █        █        █████     █   █    ██████     ██  ██   ██\n\
-██  █    █   █        █        ███████   ██                  ██\n\
-██   ████    ██████   ██████  █       █  ██  ███    ██  ██   ██\n\
-██                                                           ██\n\
-███████████████████████████████████████████████████████████████\n\n\033[0m");
-	ft_printf("MOVEMENT : %d\n",game->map.movement++);
-	exit(EXIT_SUCCESS);
-}
 
 void	p_move(t_game *game, int next_x, int next_y)
 {
@@ -39,16 +22,16 @@ void	p_move(t_game *game, int next_x, int next_y)
 	if (game->map.all[next_y][next_x] == GOAL && game->map.item.num == 0)
 		end_game(game);
 	if (game->map.all[next_y][next_x] == FLOOR
-		|| game->map.all[next_y][next_x] == ITEM || game->map.all[next_y][next_x] == GOAL)
+		|| game->map.all[next_y][next_x] == ITEM
+		|| game->map.all[next_y][next_x] == GOAL)
 	{
 		if (game->map.all[next_y][next_x] == ITEM)
 			game->map.item.num--;
-
-		if(last_x == game->map.goal.g_position_x&&last_y == game->map.goal.g_position_y)
-			game->map.all[last_y][last_x] = GOAL;			
+		if (last_x == game->map.goal.g_position_x
+			&& last_y == game->map.goal.g_position_y)
+			game->map.all[last_y][last_x] = GOAL;
 		else
 			game->map.all[last_y][last_x] = FLOOR;
-
 		game->map.all[next_y][next_x] = PLAYER;
 		game->map.player.p_position_x = next_x;
 		game->map.player.p_position_y = next_y;

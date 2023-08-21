@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   isvalid_map_check.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:50:59 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/19 18:13:33 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/21 19:19:45 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,7 @@ static char	*read_file(t_game *game, int fd)
 			break ;
 		tmp_line = link_line(tmp_line, map_line);
 		if (tmp_line == NULL)
-		{
-			// free(map_line);
-			ft_printf("\x1b[31mERROR\nMALLOC_FAILD\n\x1b[0m");
-			exit(EXIT_FAILURE);
-		}
+			exit_msg("mallocerror");
 		free(map_line);
 		game->map.rows++;
 	}
@@ -45,17 +41,11 @@ void	read_and_isvalid_map_check(t_game *game, char *argv[])
 
 	fd = open(argv[CORRECT_ARGC_NUM - 1], O_RDONLY);
 	if (fd == INVALID_FD)
-	{
-		ft_printf("\x1b[31mERROR\nMAP NOT FOUND\n\x1b[0m");
-		exit(EXIT_FAILURE);
-	}
+		exit_msg("mapnotfound");
 	tmp_line = read_file(game, fd);
 	game->map.all = ft_split(tmp_line, '\n');
 	if (game->map.all == NULL)
-	{
-		ft_printf("\x1b[31mERROR\nMAP INVALID\n\x1b[0m");
-		exit(EXIT_FAILURE);
-	}
+		exit_msg("mapinvalid");
 	free(tmp_line);
 	map_error_check(game);
 	map_isvalid_elements(game);

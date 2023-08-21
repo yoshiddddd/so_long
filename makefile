@@ -15,7 +15,7 @@ SRCS = so_long.c \
 		what_key.c\
 		seach_error.c\
 		link_line.c\
-		free_file.c\
+		put_msg.c\
 		search_goal.c
 
 OBJS = $(SRCS:.c=.o)
