@@ -6,7 +6,7 @@ MLX_PATH = mlx/
 MLX_LIB = $(MLX_PATH)libmlx.a
 
 SRCS = so_long.c \
-		isvalid_map_check.c\
+		read_and_isvalid_map_check.c\
 		check_file.c\
 		get_img.c\
 		render_map.c\
