@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_msg.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:52:06 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/21 19:25:37 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/22 14:20:18 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	closes(t_game *game)
 {
-	ft_printf("\x1b[31mclosed\n\x1b[0m");
+	ft_printf("\x1b[1;31mclosed\n\x1b[0m");
 	ft_printf("Movement : %d\n", game->map.movement);
 	exit(EXIT_SUCCESS);
 	mlx_destroy_window(game->mlx, game->window);
@@ -51,9 +51,9 @@ void	exit_msg(char *word)
 	if (ft_strncmp(word, "mallocerror", ft_strlen("mallocerror")) == 0)
 		ft_printf("\x1b[31mError\nMALLOC_ERROR\n\x1b[0m");
 	if (ft_strncmp(word, "argc", ft_strlen("argc")) == 0)
-		ft_printf("\033[1;31mError\nARGC INVALID\n\x1b[0m");
+		ft_printf("\033[31mError\nARGC INVALID\n\x1b[0m");
 	if (ft_strncmp(word, "extention", ft_strlen("extention")) == 0)
-		ft_printf("\033[1;31mError\nINVALID EXTENTION\n\x1b[0m");
+		ft_printf("\033[31mError\nINVALID EXTENTION\n\x1b[0m");
 	if (ft_strncmp(word, "mapnotfound", ft_strlen("mapnotfound")) == 0)
 		ft_printf("\x1b[31mError\nMAP NOT FOUND\n\x1b[0m");
 	if (ft_strncmp(word, "mapinvalid", ft_strlen("mapinvalid")) == 0)
