@@ -6,7 +6,7 @@
 /*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:26:59 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/21 23:57:16 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/22 14:02:55 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@
 # define GOAL 'E'
 # define WALL '1'
 # define PLAYER_PATH "./textures/player.xpm"
-# define ITEM_PATH "./textures/key.xpm"
-# define WALL_PATH "./textures/kusa.xpm"
-# define GOAL_PATH "./textures/takara.xpm"
-# define FLOOR_PATH "./textures/empty.xpm"
+# define ITEM_PATH "./textures/item.xpm"
+# define WALL_PATH "./textures/wall.xpm"
+# define GOAL_PATH "./textures/goal.xpm"
+# define FLOOR_PATH "./textures/floor.xpm"
 # define UP 13
 # define DOWN 1
 # define RIGHT 2
