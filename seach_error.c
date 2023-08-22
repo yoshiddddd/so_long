@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   seach_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 14:29:25 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/21 19:25:10 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/22 23:30:33 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	map_error_check(t_game *game)
 {
 	size_t	i;
 
-	game->map.colums = ft_strlen(game->map.all[0]);
+	game->map.colums = (int)ft_strlen(game->map.all[0]);
 	i = 0;
 	while (game->map.all[i] != NULL)
 	{
