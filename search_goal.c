@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   search_goal.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 17:17:46 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/21 19:21:31 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/22 17:11:09 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,5 @@ void	search_goal(t_game *game)
 	}
 	dfs(start_x, start_y, game);
 	if (is_goal_true(game) == false)
-		exit_msg("cantgoal");
+		exit_msg("can'tgoal");
 }

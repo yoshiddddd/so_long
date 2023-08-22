@@ -6,7 +6,7 @@
 /*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:52:06 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/22 14:20:18 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/22 17:11:22 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	exit_msg(char *word)
 		ft_printf("\x1b[31mError\nMAP NOT FOUND\n\x1b[0m");
 	if (ft_strncmp(word, "mapinvalid", ft_strlen("mapinvalid")) == 0)
 		ft_printf("\x1b[31mError\nMAP INVALID\n\x1b[0m");
-	if (ft_strncmp(word, "cantgoal", ft_strlen("cantgoal")) == 0)
+	if (ft_strncmp(word, "can'tgoal", ft_strlen("can'tgoal")) == 0)
 		ft_printf("\x1b[31mError\nCAN'T REACH GOAL\n\x1b[0m");
 	exit(EXIT_FAILURE);
 }
