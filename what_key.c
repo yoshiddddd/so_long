@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   what_key.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:53:18 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/21 19:26:16 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/23 10:51:44 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	p_move(t_game *game, int next_x, int next_y)
+static void	p_move(t_game *game, int next_x, int next_y)
 {
 	int	last_x;
 	int	last_y;

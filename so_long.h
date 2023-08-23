@@ -6,7 +6,7 @@
 /*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:26:59 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/22 14:02:55 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/23 10:43:13 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,6 @@
 # define LEFT 0
 # define TILE_SIZE 32
 # define DELETE_EVE 17
-
-typedef struct s_position
-{
-	int			x;
-	int			y;
-}				t_position;
 
 typedef struct s_element
 {
@@ -100,5 +94,6 @@ void			map_isvalid_elements(t_game *game);
 void			search_goal(t_game *game);
 void			end_game(t_game *game);
 int				closes(t_game *game);
+void 			init_game(t_game *game);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:52:06 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/22 17:11:22 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/23 10:44:16 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	closes(t_game *game)
 {
 	ft_printf("\x1b[1;31mclosed\n\x1b[0m");
 	ft_printf("Movement : %d\n", game->map.movement);
-	exit(EXIT_SUCCESS);
 	mlx_destroy_window(game->mlx, game->window);
+	exit(EXIT_SUCCESS);
 	return (0);
 }
 

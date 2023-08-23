@@ -6,13 +6,13 @@
 /*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 17:17:46 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/22 17:11:09 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/23 10:40:47 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	dfs(int x, int y, t_game *game)
+static void	dfs(int x, int y, t_game *game)
 {
 	if (x < 0 || game->map.rows < x || y < 0 || game->map.colums < y
 		|| game->map.all[x][y] == WALL)
@@ -26,7 +26,7 @@ void	dfs(int x, int y, t_game *game)
 	dfs(x, y - 1, game);
 }
 
-bool	is_goal_true(t_game *game)
+static bool	is_goal_true(t_game *game)
 {
 	int	i;
 	int	j;
@@ -49,7 +49,7 @@ bool	is_goal_true(t_game *game)
 	return (true);
 }
 
-void	research_init(t_game *game)
+static void	research_init(t_game *game)
 {
 	int	i;
 	int	j;

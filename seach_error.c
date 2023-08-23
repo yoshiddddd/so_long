@@ -6,13 +6,13 @@
 /*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 14:29:25 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/22 23:30:33 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/23 10:41:50 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	map_is_wall_check(t_game *game)
+static void	map_is_wall_check(t_game *game)
 {
 	char	**map;
 	int		i;
@@ -36,7 +36,7 @@ void	map_is_wall_check(t_game *game)
 
 void	map_error_check(t_game *game)
 {
-	size_t	i;
+	int	i;
 
 	game->map.colums = (int)ft_strlen(game->map.all[0]);
 	i = 0;
@@ -49,7 +49,7 @@ void	map_error_check(t_game *game)
 	map_is_wall_check(game);
 }
 
-void	search_element_num(char *map, t_game *game)
+static void	search_element_num(char *map, t_game *game)
 {
 	int	i;
 
@@ -70,7 +70,7 @@ void	search_element_num(char *map, t_game *game)
 	}
 }
 
-void	check_elements(t_game *game)
+static void	check_elements(t_game *game)
 {
 	int		i;
 	char	**map;

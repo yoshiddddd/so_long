@@ -16,7 +16,8 @@ SRCS = so_long.c \
 		seach_error.c\
 		link_line.c\
 		put_msg.c\
-		search_goal.c
+		search_goal.c\
+		init_game.c
 
 OBJS = $(SRCS:.c=.o)
 

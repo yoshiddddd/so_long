@@ -6,7 +6,7 @@
 /*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:15:18 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/22 13:45:56 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/23 10:57:14 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char *argv[])
 	game = (t_game *)malloc(sizeof(t_game));
 	if (!game)
 		exit_msg("mallocerror");
-	game->map.movement = 0;
+	init_game(game);
 	check_file_extention(argc, argv);
 	read_and_isvalid_map_check(game, argv);
 	game->mlx = mlx_init();

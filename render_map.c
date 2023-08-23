@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   render_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 18:29:45 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/21 19:25:51 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/23 10:40:21 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	put_image(t_game *game, int x_num, int y_num)
+static void	put_image(t_game *game, int x_num, int y_num)
 {
 	if (game->map.all[y_num][x_num] == PLAYER)
 	{
@@ -41,7 +41,7 @@ void	put_image(t_game *game, int x_num, int y_num)
 			* game->map.floor.y);
 }
 
-void	put_movement_num(t_game *game)
+static void	put_movement_num(t_game *game)
 {
 	char	*movenum;
 	char	*output;
