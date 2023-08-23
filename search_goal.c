@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   search_goal.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 17:17:46 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/23 10:40:47 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/23 15:19:34 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	dfs(int x, int y, t_game *game)
 {
-	if (x < 0 || game->map.rows < x || y < 0 || game->map.colums < y
+	if (x <= 0 || game->map.rows <= x || y <= 0 || game->map.colums <= y
 		|| game->map.all[x][y] == WALL)
 		return ;
 	if (game->map.reach[x][y] == true)
@@ -55,7 +55,6 @@ static void	research_init(t_game *game)
 	int	j;
 
 	i = 0;
-	j = 0;
 	game->map.reach = (bool **)malloc(sizeof(bool *) * game->map.rows);
 	if (!game->map.reach)
 		exit_msg("mallocerror");
@@ -64,6 +63,7 @@ static void	research_init(t_game *game)
 		game->map.reach[i] = (bool *)malloc(sizeof(bool) * game->map.colums);
 		if (!game->map.reach)
 			exit_msg("mallocerror");
+		j = 0;
 		while (j < game->map.colums)
 		{
 			game->map.reach[i][j] = false;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:26:59 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/23 10:43:13 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/23 17:44:25 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@
 # include <string.h>
 # include <unistd.h>
 
-# define FALSE 1
-# define TRUE 0
 # define CORRECT_ARGC_NUM 2
 # define EXTENSION ".ber"
 # define LINE_NULL 1
@@ -43,6 +41,7 @@
 # define DOWN 1
 # define RIGHT 2
 # define LEFT 0
+# define ESC 53
 # define TILE_SIZE 32
 # define DELETE_EVE 17
 
@@ -94,6 +93,6 @@ void			map_isvalid_elements(t_game *game);
 void			search_goal(t_game *game);
 void			end_game(t_game *game);
 int				closes(t_game *game);
-void 			init_game(t_game *game);
+void			init_game(t_game *game);
 
 #endif

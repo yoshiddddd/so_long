@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_msg.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:52:06 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/23 10:44:16 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/23 15:56:44 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	closes(t_game *game)
 	ft_printf("Movement : %d\n", game->map.movement);
 	mlx_destroy_window(game->mlx, game->window);
 	exit(EXIT_SUCCESS);
-	return (0);
 }
 
 void	end_game(t_game *game)

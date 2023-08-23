@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   what_key.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:53:18 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/23 10:51:44 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/23 14:23:44 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ int	what_key(int keycode, t_game *game)
 		p_move(game, now_x + 1, now_y);
 	if (keycode == LEFT)
 		p_move(game, now_x - 1, now_y);
+	if (keycode == ESC)
+		closes(game);
 	return (0);
 }

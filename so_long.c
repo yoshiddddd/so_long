@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
+/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:15:18 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/23 10:57:14 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/23 17:43:44 by kyoshida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	main(int argc, char *argv[])
 	get_img(game);
 	render_map(game);
 	mlx_key_hook(game->window, what_key, game);
-	mlx_hook(game->window, DELETE_EVE, 1 << 17, closes, game);
+	mlx_hook(game->window, DELETE_EVE, 1L << 17, closes, game);
 	mlx_loop(game->mlx);
-	return (TRUE);
+	return (EXIT_SUCCESS);
 }
 // __attribute__((destructor))
 // static void
