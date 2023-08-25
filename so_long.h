@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:26:59 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/23 17:44:25 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/24 14:35:59 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 # define CORRECT_ARGC_NUM 2
 # define EXTENSION ".ber"
-# define LINE_NULL 1
+# define INFINITE_LOOP 1
 # define INVALID_FD -1
 # define PLAYER 'P'
 # define ITEM 'C'
@@ -84,7 +84,7 @@ void			check_file_extention(int argc, char *argv[]);
 void			read_and_isvalid_map_check(t_game *game, char *argv[]);
 void			get_img(t_game *game);
 void			render_map(t_game *game);
-int				what_key(int keycode, t_game *game);
+int				judg_key(int keycode, t_game *game);
 void			isvalid_map_check(t_game *game, char *argv[]);
 void			exit_msg(char *word);
 char			*link_line(char *s1, char *s2);

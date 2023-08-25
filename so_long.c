@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:15:18 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/23 17:43:44 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/25 12:53:25 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char *argv[])
 			game->map.rows * TILE_SIZE, "so-long");
 	get_img(game);
 	render_map(game);
-	mlx_key_hook(game->window, what_key, game);
+	mlx_key_hook(game->window, judg_key, game);
 	mlx_hook(game->window, DELETE_EVE, 1L << 17, closes, game);
 	mlx_loop(game->mlx);
 	return (EXIT_SUCCESS);

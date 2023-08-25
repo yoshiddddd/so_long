@@ -12,7 +12,7 @@ SRCS = so_long.c \
 		render_map.c\
 		get_next_line/get_next_line.c \
 		get_next_line/get_next_line_utils.c \
-		what_key.c\
+		judg_key.c\
 		seach_error.c\
 		link_line.c\
 		put_msg.c\
@@ -48,13 +48,13 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(FT_PRINTF_LIB) $(MLX_LIB) -Lmlx -lmlx -framework OpenGL -framework AppKit mlx/libmlx.a
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJS)
 	$(MAKE) -C $(LIBFT_PATH) clean
 	$(MAKE) -C $(FT_PRINTF_PATH) clean
 	$(MAKE) -C $(MLX_PATH) clean
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 	$(MAKE) -C $(LIBFT_PATH) fclean
 	$(MAKE) -C $(FT_PRINTF_PATH) fclean
 

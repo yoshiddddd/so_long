@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   what_key.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 18:53:18 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/23 14:23:44 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/24 14:35:47 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	p_move(t_game *game, int next_x, int next_y)
 	}
 }
 
-int	what_key(int keycode, t_game *game)
+int	judg_key(int keycode, t_game *game)
 {
 	int	now_x;
 	int	now_y;

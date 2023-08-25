@@ -6,7 +6,7 @@
 /*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 14:29:25 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/23 10:41:50 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/24 13:11:55 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,7 @@ static void	search_element_num(char *map, t_game *game)
 			game->map.item.num++;
 		else if (map[i] == GOAL)
 			game->map.goal.num++;
-		else if (map[i] == FLOOR)
-			game->map.floor.num++;
-		else if (!(map[i] == WALL))
+		else if (!(map[i] == WALL || map[i] == FLOOR))
 			game->map.invalid_element++;
 		i++;
 	}
@@ -89,7 +87,7 @@ static void	check_elements(t_game *game)
 void	map_isvalid_elements(t_game *game)
 {
 	check_elements(game);
-	if (game->map.player.num != 1 || game->map.item.num < 1
+	if (game->map.player.num != 1 || game->map.item.num == 0
 		|| game->map.goal.num != 1)
 		exit_msg("invalidele");
 }

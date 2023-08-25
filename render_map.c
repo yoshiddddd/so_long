@@ -6,7 +6,7 @@
 /*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 18:29:45 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/23 10:40:21 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/24 15:45:24 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,6 @@ static void	put_image(t_game *game, int x_num, int y_num)
 			* game->map.floor.y);
 }
 
-static void	put_movement_num(t_game *game)
-{
-	char	*movenum;
-	char	*output;
-
-	movenum = ft_itoa(game->map.movement);
-	output = ft_strjoin("MOVEMENTS : ", movenum);
-	mlx_string_put(game->mlx, game->window, 20, 5, 1, output);
-	free(movenum);
-	free(output);
-}
-
 void	render_map(t_game *game)
 {
 	int	x_coord;
@@ -69,5 +57,5 @@ void	render_map(t_game *game)
 		}
 		y_coord++;
 	}
-	put_movement_num(game);
+	ft_printf("MOVEMENTS : %d\n",game->map.movement);
 }

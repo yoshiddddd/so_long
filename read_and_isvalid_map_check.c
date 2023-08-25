@@ -6,7 +6,7 @@
 /*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:50:59 by kyoshida          #+#    #+#             */
-/*   Updated: 2023/08/23 10:56:56 by yoshidakazu      ###   ########.fr       */
+/*   Updated: 2023/08/24 12:59:56 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char	*read_file(t_game *game, int fd)
 	char	*tmp_line;
 
 	tmp_line = NULL;
-	while (LINE_NULL)
+	while (INFINITE_LOOP)
 	{
 		map_line = get_next_line(fd);
 		if (map_line == NULL || map_line[0] == '\n')

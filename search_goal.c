@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   search_goal.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoshida <kyoshida@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yoshidakazushi <yoshidakazushi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 17:17:46 by yoshidakazu       #+#    #+#             */
-/*   Updated: 2023/08/23 15:19:34 by kyoshida         ###   ########.fr       */
+/*   Updated: 2023/08/24 15:49:34 by yoshidakazu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	research_init(t_game *game)
 	while (i < game->map.rows)
 	{
 		game->map.reach[i] = (bool *)malloc(sizeof(bool) * game->map.colums);
-		if (!game->map.reach)
+		if (!game->map.reach[i])
 			exit_msg("mallocerror");
 		j = 0;
 		while (j < game->map.colums)
